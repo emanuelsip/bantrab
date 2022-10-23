@@ -24,7 +24,7 @@ export class AgregarEmpresaComponent implements OnInit {
     correo: ["", [Validators.required, Validators.email]],
     nit: ["", Validators.required],
     direccion: ["", Validators.required],
-    estado: ["", Validators.required],
+    estado: ["Activo"],
   });
   
   constructor(private router: Router, 
@@ -40,10 +40,12 @@ export class AgregarEmpresaComponent implements OnInit {
   validarCampos(campo:string){
     return this.datosEmpresa.controls[campo].errors&&this.datosEmpresa.controls[campo].touched;
   }
-  validarIndividual(campo:string){
-    return this.datosEmpresa.controls[campo].errors ;
-  }
+  // validarIndividual(campo:string){
+  //   return this.datosEmpresa.controls[campo].errors&&this.datosEmpresa.controls[campo].touched ;
+  // }
   crearEmpresa() {
+    console.log(this.datosEmpresa.valid,'gardar');
+    
     if (this.datosEmpresa.valid) {
       let dataForm = {empresa:{}};
         this.empresaForm.nombre_comercial = this.datosEmpresa.get('nombre_comercial')?.value;
@@ -52,7 +54,7 @@ export class AgregarEmpresaComponent implements OnInit {
         this.empresaForm.correo = this.datosEmpresa.get('correo')?.value;
         this.empresaForm.nit = this.datosEmpresa.get('nit')?.value;
         this.empresaForm.direccion = this.datosEmpresa.get('direccion')?.value;
-        this.empresaForm.estado = this.datosEmpresa.get('estado')?.value;
+        this.empresaForm.estado = 'Activo';
         dataForm.empresa = this.empresaForm;
         
        this.httpProvider.postGuardaEmpresa(dataForm).subscribe(async data => {
@@ -65,10 +67,17 @@ export class AgregarEmpresaComponent implements OnInit {
     }
   }
   checkError(error:any){
-    this.toastService.show('Error al guardar', { classname: 'bg-danger text-light', delay: 5000 }); 
-     if(error.correo!==undefined){
-      this.datosEmpresa.controls["correo"].setErrors({'incorrect': true});
-     }
+     let messages :string = '';
+    if(error.correo!==undefined){
+      messages+= '* Correo ya utilizado ';
+    }
+    if(error.razon_social!==undefined){
+      messages+= '* Razon social ya utilizada';
+    }
+    if(error.nit!==undefined){
+      messages+= '* Nit ya utilizado';
+    }
+    this.toastService.show('Error al guardar '+messages, { classname: 'bg-danger text-light', delay: 5000 });
   }
 }
 

@@ -39,7 +39,7 @@
                                     <div *ngIf="validarCampos('razon_social')" class="alert alert-danger validationError">
                                         Requerido
                                     </div>
-                                    <div *ngIf="validarIndividual('correo')" class="alert alert-danger validationError">Razon social ya utilizada</div>
+                                    <!-- <div *ngIf="validarIndividual('correo')" class="alert alert-danger validationError">Razon social ya utilizada</div> -->
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group p-10 ">
@@ -59,7 +59,7 @@
                                     <div *ngIf="validarCampos('correo')" class="alert alert-danger validationError">
                                         Requerido
                                     </div>
-                                    <div *ngIf="validarIndividual('correo')" class="alert alert-danger validationError">Correo ya utilizado</div>
+                                    <!-- <div *ngIf="validarIndividual('correo')" class="alert alert-danger validationError">Correo ya utilizado</div> -->
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group p-10 ">
@@ -69,13 +69,13 @@
                                     <div *ngIf="validarCampos('nit')" class="alert alert-danger validationError">
                                         Requerido
                                     </div>
-                                    <div *ngIf="validarIndividual('correo')" class="alert alert-danger validationError">Nit ya utilizado</div>
+                                    <!-- <div *ngIf="validarIndividual('correo')" class="alert alert-danger validationError">Nit ya utilizado</div> -->
                                 </div>
                                 
                                 <div class="col-lg-6">
                                     <div class="form-group p-10 ">
                                         <label for="nombreEmpresa" class="p-t-b-10">Estado</label>
-                                        <input type="text" class="form-control" value="nuevo">
+                                        <input type="text" class="form-control" formControlName="estado">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
