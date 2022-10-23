@@ -1,0 +1,97 @@
+<div class="container-xl">                
+    <div class="row">
+        <div class="lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h2><b>Gestion de empresas</b></h2>
+                            <span>Editar</span>
+                        </div>
+                        <div class="col-sm-1">
+                            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                                Cancelar</a>
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-success" (click)="actualizarEmpresa();" >Guardar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                        <!-- (ngSubmit)="crearEmpresa() -->
+                        <form [formGroup]="datosEmpresa"  >
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Nombre comercial</label>
+                                        <input type="text" class="form-control" formControlName="nombre_comercial"   >
+                                    </div>
+                                    <div *ngIf="validarCampos('nombre_comercial')" class="alert alert-danger validationError">
+                                        Requerido
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Razon social</label>
+                                        <input type="text" class="form-control" formControlName="razon_social">
+                                    </div>
+                                    <div *ngIf="validarCampos('razon_social')" class="alert alert-danger validationError">
+                                        Requerido
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Telefono</label>
+                                        <input type="text" class="form-control" formControlName="telefono">
+                                    </div>
+                                    <div *ngIf="validarCampos('telefono')" class="alert alert-danger validationError">
+                                        Requerido
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Correo electronico</label>
+                                        <input type="text" class="form-control" formControlName="correo">
+                                    </div>
+                                    <div *ngIf="validarCampos('correo')" class="alert alert-danger validationError">
+                                        Requerido
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Nit</label>
+                                        <input type="text" class="form-control" formControlName="nit">
+                                    </div>
+                                    <div *ngIf="validarCampos('nit')" class="alert alert-danger validationError">
+                                        Requerido
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Estado</label>
+                                        <input type="text" class="form-control" formControlName="estado" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group p-10 ">
+                                        <label for="nombreEmpresa" class="p-t-b-10">Direccion</label>
+                                        <input type="text" class="form-control" formControlName="direccion">
+                                    </div>
+                                    <div *ngIf="validarCampos('direccion')" class="alert alert-danger validationError">
+                                        Requerido
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            
+                        </form>
+                    
+            </div>
+        </div>
+    </div>
+  </div>
+
