@@ -1,23 +1,22 @@
 <div class="container-xl">                
     <div class="row">
         <div class="lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <h2><b>Gestion de empresas</b></h2>
-                            <span>Agrega,edita y elimina empresas</span>
-                        </div>
-                        <div class="col-sm-1">
-                            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
-                                Cancelar</a>
-                        </div>
-                        <div class="col-sm-1">
-                            <button class="btn btn-success" (click)="crearEmpresa();" >Guardar</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="card p-5 mt-5">
                 <div class="card-body">
+                    <div class="card-title">
+                        <div class="row backheader p-3 text-white "> 
+                            <div class="col-sm-8"> 
+                                <h2><b>Gestion de empresas</b></h2>
+                                <span>Agrega,edita y elimina empresas</span>
+                            </div> 
+                            <div class="col-sm-2">
+                                <a href="#" routerLink="/Home" class="btn btn-success rounded-pill backheader border border-0 ps-5 pe-5 back"><i class='fas fa-arrow-circle-left'></i>Cancelar</a>
+                            </div>
+                            <div class="col-sm-2"> 
+                                <button class="btn btn-success rounded-pill backheader border border-0 ps-5 pe-5" (click)="crearEmpresa();" >Guardar</button>
+                            </div> 
+                        </div> 
+                    </div>
                         <!-- (ngSubmit)="crearEmpresa() -->
                         <form [formGroup]="datosEmpresa"  >
                             <div class="row">

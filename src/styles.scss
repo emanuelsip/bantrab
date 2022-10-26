@@ -1,1 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
+
+body{
+    background-color: gray;
+}
+.card{
+    border-color:purple;
+    border-width: 2px;
+
+}
+
+.backheader{
+    background: rgb(98,0,125);
+    background: linear-gradient(90deg, rgba(98,0,125,1) 0%, rgba(85,74,187,1) 41%, rgba(0,212,255,1) 100%);
+}
+table{
+    border-collapse: separate;
+}
+table tr td{
+    margin-top:5px;
+    margin-left:0px;
+    margin-right:0px;
+}
+input{
+    border:1px solid #c19dd5 !important
+}

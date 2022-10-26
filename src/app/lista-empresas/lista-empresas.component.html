@@ -1,15 +1,15 @@
 <div class="container-xl">
-    <div class="card">
+    <div class="card p-5 mt-5">
       
       <div class="card-body">
         <div class="card-title">
-           <div class="row"> 
+           <div class="row backheader p-3 text-white "> 
              <div class="col-sm-10"> 
               <h2><b>Gestion de empresas</b></h2>
               <span>Agrega,edita y elimina empresas</span>
              </div> 
              <div class="col-sm-2"> 
-              <button class="btn btn-success rounded-pill" (click)="AgregarEmpresa()">
+              <button class="btn btn-success rounded-pill backheader border border-0 ps-5 pe-5" (click)="AgregarEmpresa()">
                 <i class='fas fa-plus-circle'></i><span> Agregar</span> 
              </button>
              </div> 
@@ -29,7 +29,7 @@
           <tbody>
 
             <!-- *ngFor="let country of countries$ | async; index as i"> -->
-            <tr *ngFor="let empresa of listaEmpresas;index as counter" class="center-align" 
+            <tr *ngFor="let empresa of listaEmpresas;index as counter" class="center-align rounded" 
                   [ngClass]="(counter + 1) % 2==0  ? 'green' : 'blue'">
               
               <td>{{ counter + 1 }}</td>
